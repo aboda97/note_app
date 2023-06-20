@@ -18,6 +18,7 @@ class CustomNoteBody extends StatelessWidget {
             CustomAppBarNote(
               icon: Icons.search,
               onPressed: () {},
+              titleTxt: 'Note',
             ),
             const SizedBox(
               height: 16.0,

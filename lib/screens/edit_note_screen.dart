@@ -18,6 +18,7 @@ class EditNoteScreen extends StatelessWidget {
               CustomAppBarNote(
                 icon: Icons.check,
                 onPressed: () {},
+                titleTxt: 'Edit Note',
               ),
               const SizedBox(
                 height: 16.0,

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBarNote extends StatelessWidget {
+  final String titleTxt;
   final IconData icon;
   final Function() onPressed;
   const CustomAppBarNote(
-      {super.key, required this.icon, required this.onPressed});
+      {super.key,
+      required this.icon,
+      required this.onPressed,
+      required this.titleTxt});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +16,7 @@ class CustomAppBarNote extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Note',
+          titleTxt,
           style: TextStyle(
             fontSize: 32.0,
             fontWeight: FontWeight.bold,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBarNote extends StatelessWidget {
-  const CustomAppBarNote({super.key});
+  final IconData icon;
+  final Function() onPressed;
+  const CustomAppBarNote(
+      {super.key, required this.icon, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +27,9 @@ class CustomAppBarNote extends StatelessWidget {
             color: Colors.white.withOpacity(.05),
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: onPressed,
             icon: Icon(
-              Icons.search,
+              icon,
               size: 32,
               color: Colors.white.withOpacity(.8),
             ),

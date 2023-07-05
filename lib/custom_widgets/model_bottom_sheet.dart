@@ -22,7 +22,10 @@ class CustomContainerForModelBottomSheet extends StatelessWidget {
         builder: (context, state) {
           return ModalProgressHUD(
             inAsyncCall: state is AddNoteLoadingState ? true : false,
-            child: const AddNoteForm(),
+            //inAsyncCall: true,
+            child: AbsorbPointer(
+                absorbing: state is AddNoteLoadingState ? true : false,
+                child: const AddNoteForm()),
           );
         },
       ),
@@ -50,7 +53,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
       autovalidateMode: autovalidateMode,
       key: noteFormKey,
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.only(
+          top: 50,
+          right: 16,
+          left: 16,
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
         child: ListView(
           children: [
             TextFormField(

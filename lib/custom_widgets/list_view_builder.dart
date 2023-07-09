@@ -10,10 +10,11 @@ class CustomListViewBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<NoteModel> notesModel =
-        BlocProvider.of<NotesCubit>(context).notesModel!;
+   
     return BlocBuilder<NotesCubit, NotesCubitState>(
       builder: (context, state) {
+         List<NoteModel> notesModel =
+        BlocProvider.of<NotesCubit>(context).notesModel!;
         return ListView.builder(
             itemCount: notesModel.length,
             itemBuilder: ((context, index) {

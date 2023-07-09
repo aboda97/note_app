@@ -10,29 +10,26 @@ class HomeNotesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NotesCubit(),
-      child: Scaffold(
-        body: const CustomNoteBody(),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.black,
-          foregroundColor: const Color(0XFFFFCC80),
-          onPressed: () {
-            showModalBottomSheet(
-              isScrollControlled: true,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
-              ),
-              context: context,
-              builder: (context) {
-                return const CustomContainerForModelBottomSheet();
-              },
-            );
-          },
-          child: const Icon(
-            Icons.add,
-            size: 32,
-          ),
+    return Scaffold(
+      body: const CustomNoteBody(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        foregroundColor: const Color(0XFFFFCC80),
+        onPressed: () {
+          showModalBottomSheet(
+            isScrollControlled: true,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18),
+            ),
+            context: context,
+            builder: (context) {
+              return const CustomContainerForModelBottomSheet();
+            },
+          );
+        },
+        child: const Icon(
+          Icons.add,
+          size: 32,
         ),
       ),
     );

@@ -15,7 +15,9 @@ class CustomItemContanierNote extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const EditNoteScreen();
+              return EditNoteScreen(
+                noteModel: noteModel,
+              );
             },
           ),
         );
